@@ -17,30 +17,30 @@ void reshape(int width, int height) {
 }
 
 void display() {
+    glClearColor(1.0, 1.0, 1.0, 1.0); // সাদা ব্যাকগ্রাউন্ড
     glClear(GL_COLOR_BUFFER_BIT);
-    glPointSize(15);
-
-    glBegin(GL_POINTS);
-
-    // glColor3f(1.0, 0.0, 0.0);
-    // glVertex2f(0.0, 0.0);
-
-    // glColor3f(0.0, 1.0, 0.0);
-    // glVertex2f(0.75, 0.75);
-
-    // glColor3f(0.0, 0.0, 1.0);
-    // glVertex2f(-0.75, -0.75);
-
-    // glColor3f(1.0, 1.0, 0.0);
-    // glVertex2f(0.75, -0.75);
-
-    // glColor3f(1.0, 0.0, 1.0);
-    // glVertex2f(-0.75, 0.75);
     
 
+    // অরিজিন
+    glColor3f(1.0, 0.0, 0.0); // লাল বিন্দু
+    glBegin(GL_POINTS);
+    glVertex2f(0.0, 0.0);
     glEnd();
 
-    // ✅ Use this instead of glFlush()
+    // এক্স অ্যাক্সিস (লাল)
+    glColor3f(1.0, 0.0, 0.0);
+    glBegin(GL_LINES);
+    glVertex2f(1.0, 0.0);
+    glVertex2f(-1.0, 0.0);
+    glEnd();
+    
+    // ওয়াই অ্যাক্সিস (নীল)
+    glColor3f(0.0, 0.0, 1.0);
+    glBegin(GL_LINES);
+    glVertex2f(0.0, 1.0);
+    glVertex2f(0.0, -1.0);
+    glEnd();
+
     glutSwapBuffers();
 }
 
